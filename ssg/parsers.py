@@ -34,3 +34,7 @@ class ResourceParser(Parser):
 
     def parse(self, path: Path, source: Path, dest: Path):
         self.copy(path, source, dest)
+
+
+class MarkdownParser(Parser):
+    extensions: List[str] = [".md", ".markdown"]
