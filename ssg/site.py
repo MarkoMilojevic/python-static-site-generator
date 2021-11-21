@@ -4,6 +4,8 @@ from typing import List
 
 from ssg.parsers import Parser
 
+import sys
+
 
 class Site:
     def __init__(self, source, dest, parsers=None) -> None:
@@ -34,3 +36,7 @@ class Site:
             parser.parse(path, self.source, self.dest)
         else:
             print("Not implemented.")
+
+    @staticmethod
+    def error(message):
+        sys.stderr.write("\x1b[1;31m{}\n".format(message))
