@@ -38,3 +38,6 @@ class ResourceParser(Parser):
 
 class MarkdownParser(Parser):
     extensions: List[str] = [".md", ".markdown"]
+
+    def parse(self, path: Path, source: Path, dest: Path):
+        content = Content.load(self.read(path))
